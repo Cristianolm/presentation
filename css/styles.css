@@ -45,6 +45,62 @@ body {
   background-color: black;
 }
 
+/*
+================== 
+Humburger menu 
+==================
+*/
+.menu {
+  position: absolute;
+  right: 10%;
+  top: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: green;
+  border: greenyellow 2px solid;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* bars */
+.menu::before {
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 7%;
+  background-color: white;
+
+  /* Mover barrinha do centro pelo eixo "y" */
+  transform: translateY(-6px);
+  transition: 0.5s;
+}
+
+.menu.active::before {
+  /* Tranformar o "=" em "x" */
+  transform: translateY(0) rotate(45deg);
+}
+
+.menu::after {
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 7%;
+  background-color: white;
+  /* Mover barrinha do centro pelo eixo "y" */
+  transform: translateY(6px);
+  transition: 0.5s;
+}
+
+.menu.active::after {
+  /* Tranformar o "=" em "x" */
+  transform: translateY(0) rotate(-45deg);
+}
+/* bars */
+
 header {
   border-left: 7px solid var(--bs-blue);
   background-color: black;
