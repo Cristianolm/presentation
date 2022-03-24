@@ -115,14 +115,14 @@ main .overflow .certificates a {
 /*
 ============ Scrollbar ============
 */
-main .overflow::-webkit-scrollbar {
+main .portfolio::-webkit-scrollbar {
   /* ::-webkit-scrollbar - All scrollbar 
        main::-webkit-scrollbar - Just the main scrollbar 
     */
   width: 1em;
 }
 
-main .overflow::-webkit-scrollbar-track {
+main .portfolio::-webkit-scrollbar-track {
   /* 
   main::-webkit-scrollbar-track - The entire sidebar, where the bar will run. 
   */
@@ -130,7 +130,7 @@ main .overflow::-webkit-scrollbar-track {
   border-radius: 100vw;
 }
 
-main .overflow::-webkit-scrollbar-thumb {
+main .portfolio::-webkit-scrollbar-thumb {
   /* 
   main::-webkit-scrollbar-thumb - Where we are on page. 
   */
@@ -138,7 +138,7 @@ main .overflow::-webkit-scrollbar-thumb {
   border-radius: 100vw;
 }
 
-main .overflow::-webkit-scrollbar-thumb:hover {
+main .portfolio::-webkit-scrollbar-thumb:hover {
   background: blue;
   border-radius: 100vw;
   padding: 1rem;
@@ -203,8 +203,9 @@ footer .more-of-me {
   padding: 10px;
 }
 
-footer * {
+footer p {
   color: black;
+  font-size: 1.5rem;
 }
 
 footer .social,
@@ -314,6 +315,7 @@ COMPONENTS
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
+  gap: 30px;
 }
 
 .menu-content > h2 {

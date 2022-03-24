@@ -1,5 +1,169 @@
-.title h1 {
-  text-transform: uppercase;
-  font-size: 4rem;
+header .title h1 {
+  font-size: 6rem;
   color: var(--bs-blue);
+}
+
+/* Portfolio */
+.portfolio {
+  background-color: var(--bs-cream);
+  height: auto;
+  width: 100%;
+  border-radius: 10xp 10px;
+}
+
+.portfolio h1 {
+  color: var(--bs-blue);
+  height: auto;
+  width: 100%;
+}
+
+.portfolio > h1 {
+  color: blue;
+  padding-right: 10px;
+  text-align: right;
+}
+
+.portfolio * {
+  background-color: var(--bs-cream);
+  color: black;
+}
+
+.portfolio .clones {
+  width: 100%;
+  padding: 10px;
+}
+
+.portfolio .card .title h1 {
+  text-align: right;
+  font-size: 1.5rem;
+}
+
+/* Card */
+.card {
+  display: flex;
+  flex-direction: row;
+  border: none;
+  width: 100%;
+  max-height: 270px;
+}
+
+.card .description {
+  margin: 0px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card .description .live-website {
+  text-align: right;
+}
+
+.card .title h1 {
+  text-transform: uppercase;
+  text-align: left;
+  font-size: 2rem;
+  color: black;
+}
+
+.card .img {
+  width: 40%;
+}
+
+main .card {
+  width: 100%;
+  height: 30vw;
+}
+
+.card img {
+  width: 100%;
+  max-width: 275px;
+  height: 100%;
+}
+
+.card .live-website p {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.card .live-website a {
+  margin-top: 0;
+  padding-top: 0;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+/*
+============ Scrollbar ============
+*/
+.portfolio .overflow::-webkit-scrollbar {
+  /* ::-webkit-scrollbar - All scrollbar 
+       main::-webkit-scrollbar - Just the main scrollbar 
+    */
+  width: 1em;
+}
+
+.portfolio .overflow::-webkit-scrollbar-track {
+  /* 
+  main::-webkit-scrollbar-track - The entire sidebar, where the bar will run. 
+  */
+  background: white;
+  border-radius: 100vw;
+}
+
+.portfolio .overflow::-webkit-scrollbar-thumb {
+  /* 
+  main::-webkit-scrollbar-thumb - Where we are on page. 
+  */
+  background: var(--bs-blue);
+  border-radius: 100vw;
+}
+
+.portfolio .overflow::-webkit-scrollbar-thumb:hover {
+  background: blue;
+  border-radius: 100vw;
+  padding: 1rem;
+}
+
+/*
+============ Scrollbar ============
+*/
+
+@media only screen and (max-width: 884px) {
+  .portfolio {
+    background-color: var(--bs-cream);
+    height: 80vh;
+    overflow: auto;
+  }
+
+  .portfolio > h1 {
+    color: blue;
+    margin-top: 20px;
+  }
+
+  .card img {
+    width: 100%;
+    height: 100%;
+    min-width: 180px;
+  }
+
+  .portfolio .card .title h1 {
+    text-align: left;
+    font-size: 1.5rem;
+    margin-top: 20px;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .card .img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
 }
