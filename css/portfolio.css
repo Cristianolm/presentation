@@ -159,11 +159,35 @@ main .card {
   }
 }
 
+@media only screen and (max-width: 450px) {
+  header .title h1{
+    font-size: 5rem;
+  }
+}
+
 @media only screen and (max-width: 400px) {
   .card .img {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
+  }
+  
+
+@media only screen and (max-width: 390px) {
+  header .title h1 {
+    font-size: 4rem;
+  }
+}
+
+@media only screen and (max-width: 280px) {
+  header .title h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 200px) {
+  header .title h1 {
+    font-size: 2rem;
   }
 }
