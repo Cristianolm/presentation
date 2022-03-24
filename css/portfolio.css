@@ -130,7 +130,7 @@ main .card {
 @media only screen and (max-width: 884px) {
   .portfolio {
     background-color: var(--bs-cream);
-    height: 80vh;
+    height: 65vh;
     overflow: auto;
   }
 
@@ -160,8 +160,27 @@ main .card {
 }
 
 @media only screen and (max-width: 450px) {
-  header .title h1{
+  header .title h1 {
     font-size: 5rem;
+  }
+
+  .portfolio {
+    background-color: var(--bs-cream);
+    height: 75vh;
+    overflow: auto;
+  }
+
+  footer * {
+    margin: 0;
+  }
+
+  footer p {
+    font-size: 1rem;
+  }
+
+  footer .icons img {
+    width: calc(100% * 0.75);
+    height: calc(100% * 0.75);
   }
 }
 
@@ -172,7 +191,7 @@ main .card {
     align-items: center;
     width: 100%;
   }
-  
+}
 
 @media only screen and (max-width: 390px) {
   header .title h1 {
