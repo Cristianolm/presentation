@@ -108,6 +108,15 @@ main .overflow ul li {
   list-style-type: circle;
 }
 
+main #no-bullets li {
+  list-style-type: none;
+}
+
+main #no-bullets li a {
+  text-decoration: none;
+  padding-left: 0;
+}
+
 main .overflow .certificates a {
   text-decoration: none;
 }
