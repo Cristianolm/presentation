@@ -94,14 +94,14 @@ main .card {
 /*
 ============ Scrollbar ============
 */
-.portfolio .overflow::-webkit-scrollbar {
+main .portfolio::-webkit-scrollbar {
   /* ::-webkit-scrollbar - All scrollbar 
        main::-webkit-scrollbar - Just the main scrollbar 
     */
   width: 1em;
 }
 
-.portfolio .overflow::-webkit-scrollbar-track {
+main .portfolio::-webkit-scrollbar-track {
   /* 
   main::-webkit-scrollbar-track - The entire sidebar, where the bar will run. 
   */
@@ -109,7 +109,7 @@ main .card {
   border-radius: 100vw;
 }
 
-.portfolio .overflow::-webkit-scrollbar-thumb {
+main .portfolio::-webkit-scrollbar-thumb {
   /* 
   main::-webkit-scrollbar-thumb - Where we are on page. 
   */
@@ -117,12 +117,11 @@ main .card {
   border-radius: 100vw;
 }
 
-.portfolio .overflow::-webkit-scrollbar-thumb:hover {
+main .portfolio::-webkit-scrollbar-thumb:hover {
   background: blue;
   border-radius: 100vw;
   padding: 1rem;
 }
-
 /*
 ============ Scrollbar ============
 */
