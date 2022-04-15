@@ -117,6 +117,10 @@ main #no-bullets li a {
   padding-left: 0;
 }
 
+main .overflow .certificates > strong {
+  color: blue;
+}
+
 main .overflow .certificates a {
   text-decoration: none;
 }
