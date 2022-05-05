@@ -173,19 +173,24 @@ main .overflow::-webkit-scrollbar-thumb:hover {
   justify-content: flex-end;
 }
 
-.detailedCV a,
-.detailedCV h2,
-.cv {
+.detailedCV h2 {
   text-decoration: none;
   color: rgb(253, 97, 97);
+  font-weight: normal;
+}
+
+.detailedCV a h2,
+.cv {
+  text-decoration: none;
+  color: var(--bs-blue);
   position: relative;
   padding: 2px;
   transition: 0.2s;
 }
 
-.detailedCV a:hover,
-.detailedCV h2:hover {
-  color: rgb(250, 186, 186);
+.detailedCV a h2:hover,
+.cv:hover {
+  color: white;
   text-decoration: underline white;
   background-size: 100% 3px;
 }
