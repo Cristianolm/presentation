@@ -212,8 +212,6 @@ nav li a:hover {
   height: 2rem;
 }
 
-/* JS - Dropdown links initially hidden */
-
 header,
 .social .icons {
   display: flex;
@@ -226,9 +224,93 @@ header,
   height: var(--btn-edge);
 }
 
+/*
+=============== 
+Main
+===============
+*/
+
 main {
   padding-top: 34.8px;
 }
+
+main .projects {
+  border: 1px solid blue;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+main article {
+  border: 1px solid red;
+  width: 30vw;
+  max-width: 400px;
+  min-width: 200px;
+}
+
+main article .title {
+  display: flex;
+  justify-content: space-between;
+}
+
+main .projects .title a {
+  transition: var(--transition);
+}
+
+main .projects .title a:hover {
+  color: blue;
+  font-size: 1.3rem;
+  transition: var(--transition);
+}
+
+/* main .projects .project-desc {
+  height: 0px;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+main .projects .project-desc:hover {
+  height: 100px;
+} */
+
+/* Toggle */
+main .toggle {
+  position: relative;
+  height: 10px;
+  width: 10px;
+  margin-right: 5%;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  z-index: 0;
+  /* Alinhar a barrinha preta do ".toggle::before" ao centro do botão de menu/toogle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main .toggle::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 3px;
+  background-color: #120e0f;
+  /* Mover barrinha do centro pelo eixo "y" */
+  transform: translateY(0px);
+  transition: 0.5s;
+}
+
+main .toggle::after {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 20px;
+  background-color: #120e0f;
+  /* Mover barrinha do centro pelo eixo "y" */
+  transform: translateY(0px);
+  display: block;
+}
+
 @media screen and (max-width: 348px) {
   /* From 0px to 248px */
   main {
@@ -316,10 +398,19 @@ main {
   .nav-toggle {
     display: none;
   }
-
   /*
-  =============  
-  HEADER - END
-  ============= 
+  =============== 
+  Main
+  ===============
   */
+
+  main .projects .title a {
+    transition: var(--transition);
+  }
+
+  main .projects .title a:hover {
+    color: blue;
+    font-size: 1.75rem;
+    transition: var(--transition);
+  }
 }

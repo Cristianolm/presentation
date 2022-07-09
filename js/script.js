@@ -6,20 +6,71 @@ SITE INFORMATION
 const projects = [
   {
     id: 0,
-    title: "Ableton",
+    title: "Ableton about page",
     desc: [
-      "<h4>Ableton about page</h4> <p>This project is a clone of the Ableton about page.</p>",
-      "<p> The construction of this page is the result of one of the challenges proposed by the website <a href='https://www.frontendpractice.com/projects/ableton' >Frontend Practice</a >. </p>",
+      "<p>This project is a clone of the <strong><a href='https://www.ableton.com/en/about/' target = '_blank'>Ableton about page</a></strong>.</p><p> The construction of this page is the result of one of the challenges proposed by the website <strong><a href='https://www.frontendpractice.com/projects/ableton' target = '_blank'>Frontend Practice</a ></strong>. </p>",
     ],
-    btns: [
-      ["Clone", "portfolio/Ableton/about.html"],
-      ["Original", "https://www.ableton.com/en/about/"],
+    link: "portfolio/Ableton/about.html",
+    tag: ["Cloned Website"],
+  },
+  {
+    id: 1,
+    title: "For Layout Test",
+    desc: [
+      "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi perspiciatis optio ratione natus, quos architecto in sed tempore pariatur, assumenda dolor excepturi, est labore doloremque possimus repellat sequi illo recusandae.</p>",
     ],
+    link: "",
+    tag: ["Cloned Website"],
+  },
+  {
+    id: 3,
+    title: "For Layout Test",
+    desc: [
+      "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi perspiciatis optio ratione natus, quos architecto in sed tempore pariatur, assumenda dolor excepturi, est labore doloremque possimus repellat sequi illo recusandae.</p>",
+    ],
+    link: "",
+    tag: ["Cloned Website"],
+  },
+
+  {
+    id: 4,
+    title: "For Layout Test",
+    desc: [
+      "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi perspiciatis optio ratione natus, quos architecto in sed tempore pariatur, assumenda dolor excepturi, est labore doloremque possimus repellat sequi illo recusandae.</p>",
+    ],
+    link: "",
+    tag: ["Cloned Website"],
   },
 ];
 /*
 ==========================
 */
+
+// Portfolio
+const portfolioProjects = document.querySelector(".projects");
+window.addEventListener("DOMContentLoaded", function () {
+  displayPortfolioProjects(projects);
+});
+
+function displayPortfolioProjects(portfolioItems) {
+  let projects = portfolioItems.map(function name(proj) {
+    console.log(portfolioItems);
+    return `<article>
+              <!-- Project title -->
+              <div class="title">
+                <h3><a href="${proj.link}" target = "_blank">${proj.title}</a></h3>
+                <div class="toggle"></div>
+              </div>
+              <!-- Project text -->
+              <div class="project-desc">
+                ${proj.desc}
+              </div>
+            </article>`;
+  });
+
+  stringWithAllProject = projects.join("");
+  portfolioProjects.innerHTML = stringWithAllProject;
+}
 
 // NAVBAR (mobile)
 const navToggle = document.querySelector(".nav-toggle");
