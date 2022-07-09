@@ -1,3 +1,9 @@
+/* 
+====================== 
+NavBar toggle
+======================
+*/
+
 /* Button toogle */
 
 .nav-toggle {
@@ -71,3 +77,50 @@
   height: 6rem;
 }
 /* JS - Dropdown links initially hidden */
+
+
+
+/------------------------------------------------------------------------/
+
+/* 
+====================== 
+Portfolio toggle
+======================
+*/
+
+/* Toggle */
+
+.toggle {
+  position: relative;
+  height: 30px;
+  width: 30px;
+  margin-right: 5%;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  /* Alinhar a barrinha preta do ".toggle::before" ao centro do botão de menu/toogle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 3px;
+  background-color: #120e0f;
+  /* Mover barrinha do centro pelo eixo "y" */
+  transform: translateY(0px);
+  transition: 0.5s;
+}
+
+.toggle::after {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 20px;
+  background-color: #120e0f;
+  /* Mover barrinha do centro pelo eixo "y" */
+  transform: translateY(0px);
+  display: block;
+}
