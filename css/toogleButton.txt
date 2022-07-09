@@ -1,0 +1,73 @@
+/* Button toogle */
+
+.nav-toggle {
+  position: absolute;
+  top: 3px;
+  right: 200px;
+  width: var(--btn-edge);
+  height: var(--btn-edge);
+  border: black 1px solid;
+  cursor: pointer;
+  background-color: rgb(166, 243, 166);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-toggle span {
+  width: var(--btn-bar-width);
+  height: var(--btn-bar-height);
+  background-color: black;
+}
+
+/* bars */
+.nav-toggle::before {
+  content: "";
+  position: absolute;
+  width: var(--btn-bar-width);
+  height: var(--btn-bar-height);
+  background-color: black;
+
+  transform: translateY(-6px);
+  transition: var(--transition);
+}
+
+.nav-toggle::after {
+  content: "";
+  position: absolute;
+  width: var(--btn-bar-width);
+  height: var(--btn-bar-height);
+  background-color: black;
+
+  transform: translateY(6px);
+  transition: var(--transition);
+}
+
+.nav-toggle.active {
+  background-color: red;
+}
+
+.temp-bar.active {
+  display: none;
+}
+
+.nav-toggle.active::before {
+  transform: translateY(0) rotate(45deg);
+}
+
+.nav-toggle.active::after {
+  transform: translateY(0) rotate(-45deg);
+}
+
+/* JS - Dropdown links initially hidden */
+.links {
+  height: 0px;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.show-links {
+  height: 6rem;
+}
+/* JS - Dropdown links initially hidden */

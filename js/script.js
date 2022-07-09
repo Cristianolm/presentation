@@ -1,33 +1,26 @@
-var menuIcon = document.querySelector("#menu-icon");
-var footerFixed = document.querySelector("#fixed-bottom");
-console.log(footerFixed);
+// NAVBAR (mobile)
+const navToggle = document.querySelector(".nav-toggle");
+const links = document.querySelector(".links");
+const span = document.querySelector(".temp-bar");
 
-// heigh of client page
-var body = document.body,
-  html = document.documentElement;
-
-var height = Math.max(
-  body.scrollHeight,
-  body.offsetHeight,
-  html.clientHeight,
-  html.scrollHeight,
-  html.offsetHeight
-);
-
-// END - heigh of client page
-
-menuIcon.addEventListener("click", function () {
-  var hasClass = menuIcon.classList.contains("active");
-  var menuContent = document.querySelector("#menu-content");
-
-  console.log(menuContent);
-
-  if (hasClass == false) {
-    hasClass = menuIcon.classList.add("active");
-
-    menuContent.classList.remove("d-none");
-  } else if (hasClass == true) {
-    hasClass = menuIcon.classList.remove("active");
-    menuContent.classList.add("d-none");
-  }
+navToggle.addEventListener("click", function () {
+  links.classList.toggle("show-links");
+  navToggle.classList.toggle("active");
+  span.classList.toggle("active");
 });
+
+// Get current age
+const age = document.querySelectorAll(".age");
+const getAge = (birthDate) =>
+  Math.floor((new Date() - new Date(birthDate).getTime()) / 3.15576e10);
+
+const myAge = getAge("1996-01-21");
+
+age.forEach(function (e) {
+  e.textContent = myAge;
+});
+
+// Main margin to header
+// const headerHeight = document.querySelector(".header").offsetHeight;
+// const main = (document.querySelector(".main").style.paddingTop =
+//   headerHeight + "px");
