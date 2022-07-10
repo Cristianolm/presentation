@@ -46,32 +46,6 @@ const projects = [
 ==========================
 */
 
-// Portfolio
-const portfolioProjects = document.querySelector(".projects");
-window.addEventListener("DOMContentLoaded", function () {
-  displayPortfolioProjects(projects);
-});
-
-function displayPortfolioProjects(portfolioItems) {
-  let projects = portfolioItems.map(function name(proj) {
-    console.log(portfolioItems);
-    return `<article>
-              <!-- Project title -->
-              <div class="title">
-                <h3><a href="${proj.link}" target = "_blank">${proj.title}</a></h3>
-                <div class="toggle"></div>
-              </div>
-              <!-- Project text -->
-              <div class="project-desc">
-                ${proj.desc}
-              </div>
-            </article>`;
-  });
-
-  stringWithAllProject = projects.join("");
-  portfolioProjects.innerHTML = stringWithAllProject;
-}
-
 // NAVBAR (mobile)
 const navToggle = document.querySelector(".nav-toggle");
 const links = document.querySelector(".links");
@@ -93,3 +67,51 @@ const myAge = getAge("1996-01-21");
 age.forEach(function (e) {
   e.textContent = myAge;
 });
+
+// Portfolio
+const portfolioProjects = document.querySelector(".projects");
+
+window.addEventListener("DOMContentLoaded", function () {
+  displayPortfolioProjects(projects);
+
+  // Display Portfolio Description
+  const descToggle = document.querySelectorAll(".desc-toggle");
+
+  descToggle.forEach((btn) => {
+    btn.addEventListener("click", function (e) {
+      let toggleTarget =
+        e.currentTarget.parentNode.parentNode.querySelector(".project-desc");
+
+      toggleTarget.classList.toggle("show-desc");
+
+      let verticalToggleBar = toggleTarget.classList.contains("show-desc");
+      if (verticalToggleBar == true) {
+        btn.style.setProperty("--btn-vertical-bar-display", "none");
+        btn.style.setProperty("--btn-bar-Color", "red");
+      } else if (verticalToggleBar == false) {
+        btn.style.setProperty("--btn-vertical-bar-display", "block");
+        btn.style.setProperty("--btn-bar-Color", "green");
+      }
+    });
+  });
+});
+
+function displayPortfolioProjects(portfolioItems) {
+  let projects = portfolioItems.map(function name(proj) {
+    console.log(portfolioItems);
+    return `<article>
+              <!-- Project title -->
+              <div class="title">
+                <h3><a href="${proj.link}" target = "_blank">${proj.title}</a></h3>
+                <div class="desc-toggle"></div>
+              </div>
+              <!-- Project text -->
+              <div class="project-desc">
+                ${proj.desc}
+              </div>
+            </article>`;
+  });
+
+  stringWithAllProject = projects.join("");
+  portfolioProjects.innerHTML = stringWithAllProject;
+}
