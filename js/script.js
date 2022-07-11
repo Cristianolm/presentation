@@ -16,35 +16,35 @@ const projects = [
   },
   {
     id: 1,
-    title: "For Layout Test",
+    title: "1º Presentation Site",
     desc: [
-      "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi perspiciatis optio ratione natus, quos architecto in sed tempore pariatur, assumenda dolor excepturi, est labore doloremque possimus repellat sequi illo recusandae.</p>",
+      "<p>The page you're looking at hasn't always been like this. In this project you can see how I created my first presentation page as a web programmer.</p>",
     ],
-    link: "#",
-    target: "_self",
-    tag: ["Cloned Website"],
+    link: "portfolio/FirstPresentationSite/index.html",
+    target: "_blank",
+    tag: ["Personal Website"],
   },
-  {
-    id: 3,
-    title: "For Layout Test",
-    desc: [
-      "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi perspiciatis optio ratione natus, quos architecto in sed tempore pariatur, assumenda dolor excepturi, est labore doloremque possimus repellat sequi illo recusandae.</p>",
-    ],
-    link: "#",
-    target: "_self",
-    tag: ["Cloned Website"],
-  },
+  // {
+  //   id: 2,
+  //   title: "For Layout Test",
+  //   desc: [
+  //     "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi perspiciatis optio ratione natus, quos architecto in sed tempore pariatur, assumenda dolor excepturi, est labore doloremque possimus repellat sequi illo recusandae.</p>",
+  //   ],
+  //   link: "#",
+  //   target: "_self",
+  //   tag: ["Cloned Website"],
+  // },
 
-  {
-    id: 4,
-    title: "For Layout Test",
-    desc: [
-      "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi perspiciatis optio ratione natus, quos architecto in sed tempore pariatur, assumenda dolor excepturi, est labore doloremque possimus repellat sequi illo recusandae.</p>",
-    ],
-    link: "#",
-    target: "_self",
-    tag: ["Cloned Website"],
-  },
+  // {
+  //   id: 3,
+  //   title: "For Layout Test",
+  //   desc: [
+  //     "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi perspiciatis optio ratione natus, quos architecto in sed tempore pariatur, assumenda dolor excepturi, est labore doloremque possimus repellat sequi illo recusandae.</p>",
+  //   ],
+  //   link: "#",
+  //   target: "_self",
+  //   tag: ["Cloned Website"],
+  // },
 ];
 /*
 ==========================

@@ -14,6 +14,7 @@ Variables
 :root {
   /* HTML */
   --doc-back-color: rgb(240, 240, 240);
+
   /* Header */
   --header-back-color: rgb(255, 255, 255);
   --header-nav: hsl(205, 82%, 85%);
@@ -31,6 +32,11 @@ Variables
   --btn-bar-Color: green;
   --btn-vertical-bar-display: "block";
   --buttons-and-cards-heads: rgb(192, 248, 192);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--scroll-padding, 40px);
 }
 /*
 =============== 
