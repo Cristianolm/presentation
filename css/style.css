@@ -249,6 +249,10 @@ main {
   padding-top: 34.8px;
 }
 
+main > div {
+  margin-bottom: 34.8px;
+}
+
 main .projects {
   /* border: 1px solid blue; */
   display: flex;
@@ -403,12 +407,17 @@ main .projects .project-desc.show-desc {
     display: block;
   }
 
+  nav li {
+    padding-left: 0rem;
+  }
+
   nav,
   nav > ul,
   nav > ul > li,
   nav > ul > li > a {
     background-color: var(--header-back-color);
   }
+
   nav {
     position: relative;
     bottom: 0rem;
