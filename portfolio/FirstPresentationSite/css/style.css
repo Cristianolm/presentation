@@ -1,0 +1,402 @@
+:root {
+  /* ========== Font ==========*/
+  --bs-font-oswald: "Oswald", sans-serif;
+
+  /* ========== Color palette ==========*/
+  /* white - dark */
+  --bs-white: #fff;
+  --bs-gray: #6c757d;
+  --bs-gray-dark: #343a40;
+  --bs-gray-100: #f8f9fa;
+  --bs-gray-200: #e9ecef;
+  --bs-gray-300: #dee2e6;
+  --bs-gray-400: #ced4da;
+  --bs-gray-500: #adb5bd;
+  --bs-gray-600: #6c757d;
+  --bs-gray-700: #495057;
+  --bs-gray-800: #343a40;
+  --bs-gray-900: #212529;
+  --bs-dark: #212529;
+
+  /* Main colors */
+  --bs-black: #0d0d0e;
+  --bs-cream: #f1f7ed;
+  --bs-blue: #3e92cc;
+  --bs-pink: #ec2880;
+  --bs-corsa: #d00000;
+}
+
+*,
+* * {
+  font-family: var(--bs-font-oswald);
+  color: var(--bs-cream);
+  position: relative;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background-color: var(--bs-black);
+}
+
+/* 
+========== 
+Header 
+==========
+*/
+header {
+  position: relative;
+}
+.name {
+  border-top: 1px solid red;
+  width: calc(100% - 15vw);
+}
+
+.last-name {
+  text-align: right;
+}
+
+.name * {
+  text-transform: uppercase;
+  font-size: 7rem;
+  background-image: linear-gradient(90deg, var(--bs-blue), var(--bs-cream));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 
+========== 
+Main 
+==========
+*/
+
+main .overflow {
+  margin-top: 70px;
+  height: 45%;
+  max-height: 500px;
+  overflow: auto;
+  background-color: white;
+  border-radius: 5px;
+}
+
+main .overflow * {
+  color: black;
+}
+
+main .overflow h2 {
+  color: var(--bs-blue);
+}
+
+main .overflow h2:first-child {
+  color: blue;
+}
+
+main .overflow h2,
+main .overflow h3,
+main .overflow a {
+  padding: 1rem;
+  padding-bottom: 0;
+}
+
+main .overflow p {
+  padding: 1rem;
+  padding-top: 0;
+  color: var(--bs-gray-900);
+}
+
+main .overflow ul li {
+  list-style-type: circle;
+}
+
+main #no-bullets li {
+  list-style-type: none;
+}
+
+main #no-bullets li a {
+  text-decoration: none;
+  padding-left: 0;
+}
+
+main .overflow .certificates > strong {
+  color: blue;
+}
+
+main .overflow .certificates a {
+  text-decoration: none;
+}
+
+/*
+============ Scrollbar ============
+*/
+main .overflow::-webkit-scrollbar {
+  /* ::-webkit-scrollbar - All scrollbar 
+       main::-webkit-scrollbar - Just the main scrollbar 
+    */
+  width: 1em;
+}
+
+main .overflow::-webkit-scrollbar-track {
+  /* 
+  main::-webkit-scrollbar-track - The entire sidebar, where the bar will run. 
+  */
+  background: white;
+  border-radius: 100vw;
+}
+
+main .overflow::-webkit-scrollbar-thumb {
+  /* 
+  main::-webkit-scrollbar-thumb - Where we are on page. 
+  */
+  background: var(--bs-blue);
+  border-radius: 100vw;
+}
+
+main .overflow::-webkit-scrollbar-thumb:hover {
+  background: blue;
+  border-radius: 100vw;
+  padding: 1rem;
+}
+
+/*
+============ Scrollbar ============
+*/
+
+.detailedCV {
+  margin-top: 20px;
+}
+
+.detailedCV,
+.cv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.detailedCV h2 {
+  text-decoration: none;
+  color: rgb(253, 97, 97);
+  font-weight: normal;
+}
+
+.detailedCV a h2,
+.cv {
+  text-decoration: none;
+  color: var(--bs-blue);
+  position: relative;
+  padding: 2px;
+  transition: 0.2s;
+}
+
+.detailedCV a h2:hover,
+.cv:hover {
+  color: white;
+  text-decoration: underline white;
+  background-size: 100% 3px;
+}
+
+.cv-pdf {
+  height: 25px;
+}
+/*
+============ 
+Footer 
+============
+*/
+
+footer {
+  height: auto;
+  background-color: white;
+  padding: 0;
+  margin: 40px 0px 10px 0px;
+  border-radius: 10px 10px 0px 0px;
+}
+
+footer .more-of-me {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 10px;
+}
+
+footer p {
+  color: black;
+  font-size: 1.5rem;
+}
+
+footer .social,
+footer .social .icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 5px;
+}
+
+footer .social .icons img {
+  height: 35px;
+}
+
+/*
+================== 
+COMPONENTS 
+==================
+*/
+
+/* ======== Hamburger menu ========*/
+.menu-icon {
+  position: absolute;
+  right: 10%;
+  top: 3%;
+  width: 6vw;
+  height: 6vw;
+  max-width: 50px;
+  max-height: 50px;
+  min-width: 40px;
+  min-height: 40px;
+  border-radius: 10px;
+  background-color: green;
+  border: greenyellow 2px solid;
+  cursor: pointer;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-icon.active {
+  background-color: var(--bs-corsa);
+  border: red 2px solid;
+  cursor: pointer;
+  position: fixed;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* bars */
+.menu-icon::before {
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 7%;
+  background-color: white;
+
+  /* Move/rotate ":before" bar along the "y" axis. */
+  transform: translateY(-6px);
+  transition: 0.5s;
+}
+
+.menu-icon.active::before {
+  /* Tranformar o "=" em "x" */
+  transform: translateY(0) rotate(45deg);
+}
+
+.menu-icon::after {
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 7%;
+  background-color: white;
+  /* Move/rotate ":after" bar along the "y" axis. */
+  transform: translateY(6px);
+  transition: 0.5s;
+}
+
+.menu-icon.active::after {
+  /* Transform the "=" into "x" */
+  transform: translateY(0) rotate(-45deg);
+}
+
+.menu-content {
+  width: 100vw;
+  height: 100vh;
+  top: 0px;
+  position: absolute;
+  position: fixed;
+  z-index: 1;
+
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.8) 20%,
+    rgba(0, 0, 0, 0.9) 40%,
+    rgba(0, 0, 0, 1) 100%
+  );
+
+  /* Flex */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 30px;
+}
+
+.menu-content > h2 {
+  font-size: 4rem;
+  right: 10%;
+  text-decoration: none;
+  bottom: 20%;
+}
+
+.menu-content > h2 a {
+  text-decoration: none;
+}
+
+.menu-content > h2 a:hover {
+  color: var(--bs-cream);
+}
+
+/* ======== End of hamburger menu ========*/
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 780px) {
+  .name * {
+    font-size: 6rem;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .name * {
+    font-size: 5rem;
+  }
+}
+
+@media only screen and (max-width: 485px) {
+  .name * {
+    font-size: 4rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .menu-icon {
+    top: 1%;
+    right: 5%;
+  }
+  .menu-content > h2 {
+    right: 5%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .menu-content > h2 {
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (max-width: 390px) {
+  .name * {
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (max-width: 280px) {
+  .name * {
+    font-size: 2rem;
+  }
+}
