@@ -30,6 +30,7 @@ Variables
   --btn-bar-width: 90%;
   --btn-bar-Color: green;
   --btn-vertical-bar-display: "block";
+  --buttons-and-cards-heads: rgb(192, 248, 192);
 }
 /*
 =============== 
@@ -253,6 +254,21 @@ main > div {
   margin-bottom: 34.8px;
 }
 
+.stacks {
+  padding-left: 1.5rem;
+}
+
+form > input {
+  font-size: 1rem;
+  cursor: pointer;
+  width: 5rem;
+  border-bottom: 2px solid green;
+  background-color: var(--buttons-and-cards-heads);
+}
+form > input:hover {
+  font-weight: bold;
+}
+
 main .projects {
   /* border: 1px solid blue; */
   display: flex;
@@ -268,7 +284,7 @@ main article {
 main article .title {
   display: flex;
   justify-content: space-between;
-  background-color: rgb(192, 248, 192);
+  background-color: var(--buttons-and-cards-heads);
   padding-left: 5px;
 }
 
@@ -442,6 +458,9 @@ main .projects .project-desc.show-desc {
   Main
   ===============
   */
+  .stacks {
+    padding-left: 3rem;
+  }
 
   main .projects {
     /* border: 1px solid blue; */

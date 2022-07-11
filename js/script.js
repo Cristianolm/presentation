@@ -11,6 +11,7 @@ const projects = [
       "<p>This project is a clone of the <strong><a href='https://www.ableton.com/en/about/' target = '_blank'>Ableton about page</a></strong>.</p><p> The construction of this page is the result of one of the challenges proposed by the website <strong><a href='https://www.frontendpractice.com/projects/ableton' target = '_blank'>Frontend Practice</a ></strong>. </p>",
     ],
     link: "portfolio/Ableton/about.html",
+    target: "_blank",
     tag: ["Cloned Website"],
   },
   {
@@ -19,7 +20,8 @@ const projects = [
     desc: [
       "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi perspiciatis optio ratione natus, quos architecto in sed tempore pariatur, assumenda dolor excepturi, est labore doloremque possimus repellat sequi illo recusandae.</p>",
     ],
-    link: "",
+    link: "#",
+    target: "_self",
     tag: ["Cloned Website"],
   },
   {
@@ -28,7 +30,8 @@ const projects = [
     desc: [
       "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi perspiciatis optio ratione natus, quos architecto in sed tempore pariatur, assumenda dolor excepturi, est labore doloremque possimus repellat sequi illo recusandae.</p>",
     ],
-    link: "",
+    link: "#",
+    target: "_self",
     tag: ["Cloned Website"],
   },
 
@@ -38,7 +41,8 @@ const projects = [
     desc: [
       "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi perspiciatis optio ratione natus, quos architecto in sed tempore pariatur, assumenda dolor excepturi, est labore doloremque possimus repellat sequi illo recusandae.</p>",
     ],
-    link: "",
+    link: "#",
+    target: "_self",
     tag: ["Cloned Website"],
   },
 ];
@@ -102,7 +106,7 @@ function displayPortfolioProjects(portfolioItems) {
     return `<article>
               <!-- Project title -->
               <div class="title">
-                <h3><a href="${proj.link}" target = "_blank">${proj.title}</a></h3>
+                <h3><a href="${proj.link}" target = "${proj.target}">${proj.title}</a></h3>
                 <div class="desc-toggle"></div>
               </div>
               <!-- Project text -->
@@ -115,3 +119,12 @@ function displayPortfolioProjects(portfolioItems) {
   stringWithAllProject = projects.join("");
   portfolioProjects.innerHTML = stringWithAllProject;
 }
+
+// Redirect to Correct CV
+const formCV = document.querySelector("form");
+const formCVvalue = document.querySelector("form").querySelector("input");
+formCVvalue.addEventListener("click", () => {
+  let cvLang = document.querySelector("#lang");
+  let value = cvLang.options[cvLang.selectedIndex].value;
+  formCV.action = `cv/CV_Cristiano(${value}).pdf`;
+});
