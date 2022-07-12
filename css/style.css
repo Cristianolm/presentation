@@ -275,6 +275,26 @@ form > input:hover {
   font-weight: bold;
 }
 
+.filterProjects {
+  border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.filter-btn {
+  border-radius: 5%;
+  padding: 5px;
+  width: max-content;
+  font-weight: bold;
+  border: 1.5px solid gray;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.filter-btn:hover {
+  background-color: khaki;
+}
+
 main .projects {
   /* border: 1px solid blue; */
   display: flex;
