@@ -101,17 +101,20 @@ function displayMenuButtons() {
     uniqueTagListId[pos] = [cleanTagList[pos].substr(-1)];
   }
 
-  const uniqueTagList = [...new Set(cleanTagList)];
+  let tempList = [...new Set(cleanTagList)];
 
-  for (let pos = 1; pos < uniqueTagList.length; pos++) {
-    var deleteLastNumbers = uniqueTagList[pos].replace(/[0-9]/g, "");
+  for (let pos = 1; pos < tempList.length; pos++) {
+    var deleteLastNumbers = tempList[pos].replace(/[0-9]/g, "");
 
     if (pos !== "-1") {
-      uniqueTagList[pos] = deleteLastNumbers;
+      tempList[pos] = deleteLastNumbers;
     }
   }
-  console.log(uniqueTagListId);
+
+  const uniqueTagList = [...new Set(tempList)];
+
   console.log(uniqueTagList);
+  console.log(uniqueTagListId);
 
   // Generate buttons
   buttonStr = uniqueTagList.map(function (e) {
