@@ -276,7 +276,7 @@ form > input:hover {
 }
 
 .filterProjects {
-  /* border: 1px solid red; */
+  border: 1px solid red;
   display: flex;
   justify-content: center;
   gap: 20px;

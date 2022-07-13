@@ -41,6 +41,26 @@ const projects = [
     target: "_blank",
     tag: "Personal Website",
   },
+  {
+    id: 3,
+    title: "2º Teste",
+    desc: [
+      "<p>The page you're looking at hasn't always been like this. In this project you can see how I created my first presentation page as a web programmer.</p>",
+    ],
+    link: "#",
+    target: "#",
+    tag: "Personal Website",
+  },
+  {
+    id: 4,
+    title: "3º Teste",
+    desc: [
+      "<p>The page you're looking at hasn't always been like this. In this project you can see how I created my first presentation page as a web programmer.</p>",
+    ],
+    link: "#",
+    target: "#",
+    tag: "Cloned Website",
+  },
 ];
 /*
 ==========================
@@ -70,10 +90,12 @@ age.forEach(function (e) {
 
 // Portfolio
 const portfolioProjects = document.querySelector(".projects");
+var test = displayMenuButtons();
 
 window.addEventListener("DOMContentLoaded", function () {
   displayPortfolioProjects(projects);
   displayMenuButtons();
+  hideProjects();
 });
 
 function displayMenuButtons() {
@@ -95,7 +117,7 @@ function displayMenuButtons() {
   });
 
   // Create two array, where the index values of one "uniqueTagListId" is the correspondent "id" value of the elements in the array "uniqueTagList"
-  var uniqueTagListId = [];
+  const uniqueTagListId = [];
 
   for (let pos = 1; pos < cleanTagList.length; pos++) {
     uniqueTagListId[pos] = [cleanTagList[pos].substr(-1)];
@@ -113,8 +135,7 @@ function displayMenuButtons() {
 
   const uniqueTagList = [...new Set(tempList)];
 
-  console.log(uniqueTagList);
-  console.log(uniqueTagListId);
+  uniqueTagListId[0] = null;
 
   // Generate buttons
   buttonStr = uniqueTagList.map(function (e) {
@@ -125,11 +146,23 @@ function displayMenuButtons() {
   filterProjects.innerHTML = stringWithAllButtons;
 
   // RETURN
-  return uniqueTagList;
+  const tagsAndIds = [tempList, uniqueTagListId, uniqueTagList];
+  // console.log(tagsAndIds);
+  return tagsAndIds;
 }
 
+// HERE======================================================
+function hideProjects() {
+  console.log(test);
+  let article = document.querySelectorAll("article");
+  let filterBtn = document.querySelectorAll(".filter-btn");
+}
+console.log(article);
+console.log(filterBtn);
+
+// HERE======================================================
+
 function displayPortfolioProjects(portfolioItems) {
-  // displayMenuButtons();
   let projects = portfolioItems.map(function name(proj) {
     return `<article data-group=${proj.tag}>
               <!-- Project title -->
