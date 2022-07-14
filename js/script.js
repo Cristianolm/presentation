@@ -31,36 +31,36 @@ const projects = [
     target: "_blank",
     tag: "Personal Website",
   },
-  {
-    id: 2,
-    title: "1º Test JS",
-    desc: [
-      "<p>The page you're looking at hasn't always been like this. In this project you can see how I created my first presentation page as a web programmer.</p>",
-    ],
-    link: "#",
-    target: "_blank",
-    tag: "Test JS",
-  },
-  {
-    id: 3,
-    title: "2º Test JS",
-    desc: [
-      "<p>The page you're looking at hasn't always been like this. In this project you can see how I created my first presentation page as a web programmer.</p>",
-    ],
-    link: "#",
-    target: "#",
-    tag: "Test JS",
-  },
-  {
-    id: 4,
-    title: "3º Test JS",
-    desc: [
-      "<p>The page you're looking at hasn't always been like this. In this project you can see how I created my first presentation page as a web programmer.</p>",
-    ],
-    link: "#",
-    target: "#",
-    tag: "Test JS",
-  },
+  // {
+  //   id: 2,
+  //   title: "1º Test JS",
+  //   desc: [
+  //     "<p>The page you're looking at hasn't always been like this. In this project you can see how I created my first presentation page as a web programmer.</p>",
+  //   ],
+  //   link: "#",
+  //   target: "_blank",
+  //   tag: "Test JS",
+  // },
+  // {
+  //   id: 3,
+  //   title: "2º Test JS",
+  //   desc: [
+  //     "<p>The page you're looking at hasn't always been like this. In this project you can see how I created my first presentation page as a web programmer.</p>",
+  //   ],
+  //   link: "#",
+  //   target: "#",
+  //   tag: "Test JS",
+  // },
+  // {
+  //   id: 4,
+  //   title: "3º Test JS",
+  //   desc: [
+  //     "<p>The page you're looking at hasn't always been like this. In this project you can see how I created my first presentation page as a web programmer.</p>",
+  //   ],
+  //   link: "#",
+  //   target: "#",
+  //   tag: "Test JS",
+  // },
 ];
 /*
 ==========================
