@@ -276,11 +276,13 @@ form > input:hover {
 }
 
 .filterProjects {
-  border: 1px solid red;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 5px;
+  margin-bottom: 5px;
 }
+
 .filter-btn {
   border-radius: 5%;
   padding: 5px;
@@ -288,7 +290,7 @@ form > input:hover {
   font-weight: bold;
   border: 1.5px solid gray;
   cursor: pointer;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 .filter-btn:hover {
@@ -296,7 +298,6 @@ form > input:hover {
 }
 
 main .projects {
-  /* border: 1px solid blue; */
   display: flex;
   flex-wrap: wrap;
   gap: 2px;
@@ -486,6 +487,10 @@ main .projects .project-desc.show-desc {
   */
   .stacks {
     padding-left: 3rem;
+  }
+
+  .filterProjects {
+    margin-bottom: 15px;
   }
 
   main .projects {

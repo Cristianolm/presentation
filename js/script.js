@@ -33,33 +33,33 @@ const projects = [
   },
   {
     id: 2,
-    title: "Teste",
+    title: "1º Test JS",
     desc: [
       "<p>The page you're looking at hasn't always been like this. In this project you can see how I created my first presentation page as a web programmer.</p>",
     ],
-    link: "portfolio/FirstPresentationSite/index.html",
+    link: "#",
     target: "_blank",
-    tag: "Personal Website",
+    tag: "Test JS",
   },
   {
     id: 3,
-    title: "2º Teste",
+    title: "2º Test JS",
     desc: [
       "<p>The page you're looking at hasn't always been like this. In this project you can see how I created my first presentation page as a web programmer.</p>",
     ],
     link: "#",
     target: "#",
-    tag: "Personal Website",
+    tag: "Test JS",
   },
   {
     id: 4,
-    title: "3º Teste",
+    title: "3º Test JS",
     desc: [
       "<p>The page you're looking at hasn't always been like this. In this project you can see how I created my first presentation page as a web programmer.</p>",
     ],
     link: "#",
     target: "#",
-    tag: "Cloned Website",
+    tag: "Test JS",
   },
 ];
 /*
@@ -94,7 +94,8 @@ var test = displayMenuButtons();
 
 window.addEventListener("DOMContentLoaded", function () {
   displayPortfolioProjects(projects);
-  displayMenuButtons();
+  const connectionBtwnIdValuesBtnsAndArticles = displayMenuButtons();
+  console.log(connectionBtwnIdValuesBtnsAndArticles);
   hideProjects();
 });
 
@@ -110,32 +111,36 @@ function displayMenuButtons() {
   var tagsList = tags.split("-");
   tagsList.pop();
 
-  // Prevent duplication by removing repeted terms and whitespaces
-  cleanTagList = tagsList.map(function (e) {
-    a = e.replace(/^\s\s*/, "").replace(/\s\s*$/, "");
-    return a;
-  });
+  // console.log(tagsList);
 
   // Create two array, where the index values of one "uniqueTagListId" is the correspondent "id" value of the elements in the array "uniqueTagList"
   const uniqueTagListId = [];
 
-  for (let pos = 1; pos < cleanTagList.length; pos++) {
-    uniqueTagListId[pos] = [cleanTagList[pos].substr(-1)];
-  }
-
-  let tempList = [...new Set(cleanTagList)];
-
-  for (let pos = 1; pos < tempList.length; pos++) {
-    var deleteLastNumbers = tempList[pos].replace(/[0-9]/g, "");
-
-    if (pos !== "-1") {
-      tempList[pos] = deleteLastNumbers;
+  for (let pos = 0; pos < tagsList.length; pos++) {
+    if (pos === 0) {
+      uniqueTagListId[pos] = null;
+    } else if (pos > 0) {
+      uniqueTagListId[pos] = tagsList[pos].substr(-1);
     }
   }
 
-  const uniqueTagList = [...new Set(tempList)];
+  // console.log(uniqueTagListId);
 
-  uniqueTagListId[0] = null;
+  // Create list of the categories without thei identifier in the end
+  let ListWithoutId = [...new Set(tagsList)];
+
+  for (let pos = 1; pos < ListWithoutId.length; pos++) {
+    var deleteLastNumbers = ListWithoutId[pos].replace(/[0-9]/g, "");
+
+    if (pos !== "-1") {
+      ListWithoutId[pos] = deleteLastNumbers;
+    }
+  }
+
+  // console.log(ListWithoutId);
+
+  // Generate List of buttons without repeted values
+  const uniqueTagList = [...new Set(ListWithoutId)];
 
   // Generate buttons
   buttonStr = uniqueTagList.map(function (e) {
@@ -145,26 +150,75 @@ function displayMenuButtons() {
   let filterProjects = document.querySelector(".filterProjects");
   filterProjects.innerHTML = stringWithAllButtons;
 
-  // RETURN
-  const tagsAndIds = [tempList, uniqueTagListId, uniqueTagList];
+  // console.log(buttonStr);
+  // // RETURN
+  const tagsAndIds = [uniqueTagListId, ListWithoutId, uniqueTagList];
   // console.log(tagsAndIds);
   return tagsAndIds;
 }
-
 // HERE======================================================
 function hideProjects() {
-  console.log(test);
   let article = document.querySelectorAll("article");
   let filterBtn = document.querySelectorAll(".filter-btn");
+  console.log(article);
+  console.log(filterBtn);
+  // console.log(article[0].dataset.id);
+  // console.log(filterBtn[1].dataset.group);
+  var btnCliked = [];
+  filterBtn.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      var btnClikedTemp = e.currentTarget.dataset.group;
+      btnCliked[0] = btnClikedTemp;
+      console.log(btnCliked[0]);
+
+      // APPLY "DIPLAY: BLOCK" to all articles
+      if (btnCliked[0] === "All") {
+        article.forEach((stl) => {
+          stl.style.display = "block";
+        });
+      }
+      // APPLY "DIPLAY: NONE" to non selected articles
+      else if (!btnCliked[0] !== "All") {
+        // Check What projects have the tag iqual to the button
+        var checkProjects = projects.map((project) => {
+          if (project.tag === btnClikedTemp) return "show";
+          else if (project.tag !== btnClikedTemp) return "hide";
+          else return null;
+        });
+        console.log(checkProjects);
+
+        // Positions to hide the display none and keep
+        var articlesToDisplayNone = [];
+        var articlesToKeep = [];
+        for (let pos = 0; pos < checkProjects.length; pos++) {
+          if (checkProjects[pos] === "hide") {
+            articlesToDisplayNone.push(pos);
+          } else if (checkProjects[pos] === "show") {
+            articlesToKeep.push(pos);
+          }
+        }
+        console.log(articlesToDisplayNone);
+        console.log(articlesToKeep);
+
+        // Display none
+        for (let pos = 0; pos < article.length; pos++) {
+          if (articlesToDisplayNone.includes(pos)) {
+            article[pos].style.display = "none";
+          }
+          if (!articlesToDisplayNone.includes(pos)) {
+            article[pos].style.display = "block";
+          }
+        }
+      }
+    });
+  });
 }
-console.log(article);
-console.log(filterBtn);
 
 // HERE======================================================
 
 function displayPortfolioProjects(portfolioItems) {
-  let projects = portfolioItems.map(function name(proj) {
-    return `<article data-group=${proj.tag}>
+  let projects = portfolioItems.map(function (proj) {
+    return `<article data-id=${proj.id}>
               <!-- Project title -->
               <div class="title">
                 <h3><a href="${proj.link}" target = "${proj.target}">${proj.title}</a></h3>
