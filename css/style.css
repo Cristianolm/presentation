@@ -479,6 +479,12 @@ main .projects .project-desc.show-desc {
     top: 0;
   }
 
+  nav li a:hover {
+    color: var(--header-font-color);
+    background-color: rgba(146, 197, 255, 0);
+    font-weight: bold;
+  }
+
   /* Nav Toggle*/
   .nav-toggle {
     display: none;
