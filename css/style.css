@@ -145,11 +145,14 @@ nav li {
 }
 
 nav li a {
+  width: 100%;
   background-color: var(--header-nav);
+  font-size: 1.2rem;
 }
 
 nav li a:hover {
   color: var(--header-font-color);
+  background-color: rgb(146, 197, 255);
   font-weight: bold;
 }
 
